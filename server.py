@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-
 app = Flask(__name__)
 print(__name__)
 
@@ -11,6 +10,6 @@ def hello_world():
 def blog():
     return 'These are my thoughts on blogs'
 
-@app.route('/about.html')
+@app.route('/about')
 def about():
-    return 'About me'
+    return render_template('about.html')
