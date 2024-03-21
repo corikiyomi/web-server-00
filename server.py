@@ -6,7 +6,7 @@ print(__name__)
 def hello_world(username=None, post_id=None): # Set the default 
     return render_template('index.html', name=username, post_id=post_id)
 
-@app.route('/blog') # URL Endpoint determines what to send to the front end to display the appropriate information
+@app.route('/blog') # API Endpoint determines what to send to the front end to display the appropriate information
 def blog():
     return 'These are my thoughts on blogs'
 
