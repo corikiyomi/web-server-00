@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 print(__name__)
@@ -11,6 +11,16 @@ def my_home():
 def html_page(page_name):
     return render_template(page_name)
 
-@app.route('/submit_form', methods=['POST', 'GET'])
+
+#FIXME - Bug 001
+'''
+Server returns HTTP ERROR 405
+'''
+@app.route('./templates/submit_form', methods=['POST', 'GET'])
 def submit_form():
-    return 'Form submitted successfully.'
+    if request.method == "POST":
+        data = request.form.to.dict()
+        print(data)
+        return redirect('/thankyou.html')
+    else:
+        return 'Something went wrong. Try again.'
