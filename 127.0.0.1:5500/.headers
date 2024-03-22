@@ -1,0 +1,11 @@
+[
+  {
+    "applyTo": "submit_form",
+    "headers": [
+      {
+        "name": "allow",
+        "value": "POST, GET, HEAD, OPTIONS"
+      }
+    ]
+  }
+]
